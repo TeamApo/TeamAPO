@@ -1,0 +1,1 @@
+directory for the screen mock of the Book Trading Platform
