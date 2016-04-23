@@ -14,7 +14,7 @@ namespace BookShop
         {
             if(Session["Username"] != null)
             {
-                adminddl.Visible = (string)Session["UserFirstname"] == "Мариян" ? true : false;
+                adminddl.Visible = (string)Session["Username"] == "admin" ? true : false;
                 loginPanel.Visible = false;
                 btnRegister.Visible = false;
                 exitBtn.Visible = true;

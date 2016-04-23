@@ -71,3 +71,4 @@ D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\EntityFramework.dll
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\EntityFramework.SqlServer.dll
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\EntityFramework.xml
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\EntityFramework.SqlServer.xml
+D:\Programing\SoftUni\SoftUni\BookShop\BookShop\obj\Debug\BookShop.csprojResolveAssemblyReference.cache
