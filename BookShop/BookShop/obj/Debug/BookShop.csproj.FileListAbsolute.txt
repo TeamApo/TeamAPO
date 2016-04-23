@@ -65,10 +65,10 @@ D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\System.Web.Optimization.xml
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\Antlr3.Runtime.pdb
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\Newtonsoft.Json.xml
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\Microsoft.AspNet.FriendlyUrls.xml
-D:\Programing\SoftUni\SoftUni\BookShop\BookShop\obj\Debug\BookShop.csprojResolveAssemblyReference.cache
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\obj\Debug\BookShop.dll
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\obj\Debug\BookShop.pdb
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\EntityFramework.dll
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\EntityFramework.SqlServer.dll
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\EntityFramework.xml
 D:\Programing\SoftUni\SoftUni\BookShop\BookShop\bin\EntityFramework.SqlServer.xml
+D:\Programing\SoftUni\SoftUni\BookShop\BookShop\obj\Debug\BookShop.csprojResolveAssemblyReference.cache

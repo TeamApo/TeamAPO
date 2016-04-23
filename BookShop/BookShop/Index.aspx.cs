@@ -11,7 +11,16 @@ namespace BookShop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            using (BSEntities Db = new BSEntities())
+            {
+                ddl.DataSource = Db.cities.Select(x=>x.name).ToList();
+                ddl.DataBind();
+            }
+            
+        }
+
+        protected void Login_Click(object sender, EventArgs e)
+        {
             
         }
     }

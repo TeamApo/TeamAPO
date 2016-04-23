@@ -1,23 +1,12 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="BookShop._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
- <style>
-     #gr { color:red;}
- </style>
-    
-    <h3>Автори на книги</h3>
+
+    <h3 id="welcome" runat="server" class="alert alert-info"></h3>
 <br />
 
-
-    <div style="margin-left:550px;"><asp:GridView BorderStyle="Solid" Font-Size="Large" AutoGenerateColumns="false" AutoGenerateEditButton="true" runat="server" ID="gr">
-        <Columns>
-<asp:BoundField DataField="fname" HeaderText="Име" />
-            <asp:BoundField DataField="lname" HeaderText="Фамилия" />
-</Columns>
-                                    </asp:GridView></div>
-
-
-
+    <b>Последно добавени книги</b><br /><br />
+   
 
 <%--        <div class="row">
             <div class="col-sm-3">

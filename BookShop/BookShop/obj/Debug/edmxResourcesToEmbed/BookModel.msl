@@ -13,6 +13,8 @@
     <EntitySetMapping Name="books">
       <EntityTypeMapping TypeName="BOOKSHOPModel.book">
         <MappingFragment StoreEntitySet="books">
+          <ScalarProperty Name="id_valute" ColumnName="id_valute" />
+          <ScalarProperty Name="image_url" ColumnName="image_url" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="description" ColumnName="description" />
@@ -88,6 +90,14 @@
           <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="access" ColumnName="access" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="valutes">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.valute">
+        <MappingFragment StoreEntitySet="valute">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

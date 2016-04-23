@@ -20,6 +20,8 @@
     <Property Name="count" Type="int" />
     <Property Name="price" Type="decimal" Precision="18" Scale="0" />
     <Property Name="outside_view" Type="bit" />
+    <Property Name="image_url" Type="varchar" MaxLength="150" />
+    <Property Name="id_valute" Type="int" />
   </EntityType>
   <EntityType Name="categories">
     <Key>
@@ -74,13 +76,20 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
     <Property Name="fname" Type="varchar" MaxLength="50" />
     <Property Name="lname" Type="varchar" MaxLength="50" />
     <Property Name="city_id" Type="int" />
     <Property Name="address" Type="varchar" MaxLength="100" />
     <Property Name="phone" Type="varchar" MaxLength="50" />
     <Property Name="access" Type="bit" />
+  </EntityType>
+  <EntityType Name="valute">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <Association Name="FK_books_authors">
     <End Role="authors" Type="Self.authors" Multiplicity="0..1" />
@@ -103,6 +112,18 @@
       </Principal>
       <Dependent Role="books">
         <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_books_valute">
+    <End Role="valute" Type="Self.valute" Multiplicity="0..1" />
+    <End Role="books" Type="Self.books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="valute">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="books">
+        <PropertyRef Name="id_valute" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -163,12 +184,17 @@
     <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="valute" EntityType="Self.valute" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_books_authors" Association="Self.FK_books_authors">
       <End Role="authors" EntitySet="authors" />
       <End Role="books" EntitySet="books" />
     </AssociationSet>
     <AssociationSet Name="FK_books_categories" Association="Self.FK_books_categories">
       <End Role="categories" EntitySet="categories" />
+      <End Role="books" EntitySet="books" />
+    </AssociationSet>
+    <AssociationSet Name="FK_books_valute" Association="Self.FK_books_valute">
+      <End Role="valute" EntitySet="valute" />
       <End Role="books" EntitySet="books" />
     </AssociationSet>
     <AssociationSet Name="FK_order_details_books" Association="Self.FK_order_details_books">
