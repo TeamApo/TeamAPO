@@ -1,4 +1,3 @@
-import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,14 +6,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import org.testng.annotations.Test;
-
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertTrue;
 
-/**
- * Created by W520 on 16.4.2016 г..
- */
+
 public class LoginPageNegativeTests {
 
     private WebDriver driver;

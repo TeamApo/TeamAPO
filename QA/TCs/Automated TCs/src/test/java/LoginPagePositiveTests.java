@@ -11,15 +11,13 @@ import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
 
 
-/**
- * Created by W520 on 19.4.2016 г..
- */
 public class LoginPagePositiveTests {
 
     private WebDriver driver;
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp()
+    {
         driver = new FirefoxDriver();
     }
 
