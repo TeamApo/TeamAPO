@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6bb5c91f982240ecb63c688f0e36fe6a" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="BOOKSHOPModel.author" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOOKSHOPModel.book" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOOKSHOPModel.category" Width="1.5" PointX="0.875" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOOKSHOPModel.city" Width="1.5" PointX="4.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOOKSHOPModel.order_details" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOOKSHOPModel.order" Width="1.5" PointX="8.625" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOOKSHOPModel.sysdiagram" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOOKSHOPModel.user" Width="1.5" PointX="6.625" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="BOOKSHOPModel.FK_books_authors" ManuallyRouted="false" />
+        <AssociationConnector Association="BOOKSHOPModel.FK_books_categories" ManuallyRouted="false" />
+        <AssociationConnector Association="BOOKSHOPModel.FK_order_details_books" ManuallyRouted="false" />
+        <AssociationConnector Association="BOOKSHOPModel.FK_users_cities" ManuallyRouted="false" />
+        <AssociationConnector Association="BOOKSHOPModel.FK_order_details_orders" ManuallyRouted="false" />
+        <AssociationConnector Association="BOOKSHOPModel.FK_orders_users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BOOKSHOPModel.valute" Width="1.5" PointX="1" PointY="5.5" />
+        <AssociationConnector Association="BOOKSHOPModel.FK_books_valute" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

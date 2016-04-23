@@ -1,0 +1,132 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BookShop.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TeamAPO SHOP</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+
+        .jumbotron {
+            border: 2px solid silver;
+            background: url(images/back_sm.jpg) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            box-shadow: 10px 3px 15px 10px #B8E7EC;
+        }
+        .navbar {
+     width: 100%;
+     position: absolute;
+     top: 0;
+     }
+    </style>
+    <script>
+        function redirect() {
+            location.href = 'Register.aspx';
+        }
+    </script>
+</head>
+<body>
+      <form runat="server" id="form">
+
+        <nav class="navbar navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">TeamAPO BOOKs</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="default.aspx"><span class="glyphicon glyphicon-home"></span> Начало</a></li>
+                        <li><a href="about-us.aspx"><span class="glyphicon glyphicon-exclamation-sign"></span> За нас</a></li>
+                        <li><a href="books_view.aspx"><span class="glyphicon glyphicon-book"></span> Книги</a></li>
+                        <li><a href="shoppingCart.aspx"><span class="glyphicon glyphicon-shopping-cart"></span> Количка</a></li>
+                        <li><a href="Authors_view.aspx"><span class="glyphicon glyphicon-user"></span> Автори</a></li>
+                        <li><a href="Categories_view.aspx"><span class="glyphicon glyphicon-th-list"></span> Категории</a></li>
+                    </ul>
+                    <%--      <div class="nav navbar-nav">
+                        <asp:TextBox runat="server" Width="100"></asp:TextBox>
+                    </div>--%>
+
+                  
+                    <div class="nav navbar-nav navbar-right">
+
+                       <asp:Button ID="btnRegister" OnClick="btnRegister_Click" style="margin-top:13px;" class="btn btn-info" Text="Регистрация" runat="server" />
+
+                           <asp:Button ID="loginPanel" OnClick="loginPanel_Click" style="margin-top:13px;" class="btn btn-info" Text="Вход" runat="server" />
+   
+                        <div runat="server" style="margin-top: 12px;" class="dropdown">
+                            <button id="adminddl" runat="server" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">                               
+                                <span><span class="glyphicon glyphicon-cog"></span>Администрация</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="users"><span class="glyphicon glyphicon-user"></span> Потребители</a></li>
+                                <li><a href="cities"><span class="glyphicon glyphicon-home"></span> Градове</a></li>
+                                <li><a href="books.aspx"><span class="glyphicon glyphicon-book"></span> Добавяне на книги</a></li>
+                                <li><a href="Authors.aspx"><span class="glyphicon glyphicon-user"></span> Добавяне на автори</a></li>
+                                 <li><a href="Categories.aspx"><span class="glyphicon glyphicon-th-list"></span> Добавяне на категории</a></li>
+                                <li><a href="invoices"><span class="glyphicon glyphicon-folder-open"></span> Поръчки</a></li>
+                                <li><a href="stats"><span class="glyphicon glyphicon-stats"></span> Статистики</a></li>
+                            </ul>
+                            <asp:ImageButton runat="server" style="margin-left: 35px;" ID="exitBtn" OnClick="exitBtn_Click" ImageUrl="Images/exit.png" width="25" title="Изход" />
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="jumbotron">
+            <div class="container text-right">
+                <table>
+                    <tr><td> <asp:TextBox ID="tbSearch"  style="box-shadow:5px 5px 40px 10px silver;" class="form-control" placeholder="търсене по книга,автор,категория" runat="server" Width="350"></asp:TextBox></td>
+                    <td><asp:ImageButton ID="btnSearch" OnClick="btnSearch_Click" style="box-shadow:5px 5px 40px 10px silver;" class="form-control" runat="server" ImageUrl="Images/search.png" Width="40" /></td></tr>
+                </table>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+
+        <div class="container-fluid bg-3 text-center">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+    </form>
+</body>
+</html>
+
+
