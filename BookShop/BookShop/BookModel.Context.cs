@@ -33,5 +33,6 @@ namespace BookShop
         public virtual DbSet<order> orders { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<valute> valutes { get; set; }
     }
 }

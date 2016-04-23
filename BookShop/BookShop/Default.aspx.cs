@@ -11,13 +11,14 @@ namespace BookShop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            using (BSEntities Db = new BSEntities())
+            if(Session["UserFirstname"] != null)
             {
-                var at = Db.authors.Select(x => new { x.fname,x.lname }).ToList();
-                gr.DataSource = at;
-                gr.DataBind();
+                welcome.InnerText = "Здравей, " + Session["UserFirstname"] + " !";
             }
-
+            else
+            {
+                welcome.InnerText = "Здравей!";
+            }
         }
     }
 }

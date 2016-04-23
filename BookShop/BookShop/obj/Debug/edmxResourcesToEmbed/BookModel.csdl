@@ -24,6 +24,9 @@
     <NavigationProperty Name="author" Relationship="Self.FK_books_authors" FromRole="books" ToRole="authors" />
     <NavigationProperty Name="category" Relationship="Self.FK_books_categories" FromRole="books" ToRole="categories" />
     <NavigationProperty Name="order_details" Relationship="Self.FK_order_details_books" FromRole="books" ToRole="order_details" />
+    <Property Name="image_url" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="id_valute" Type="Int32" />
+    <NavigationProperty Name="valute" Relationship="BOOKSHOPModel.FK_books_valute" FromRole="book" ToRole="valute" />
   </EntityType>
   <EntityType Name="category">
     <Key>
@@ -84,7 +87,7 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="city_id" Type="Int32" />
@@ -199,5 +202,30 @@
       <End Role="users" EntitySet="users" />
       <End Role="orders" EntitySet="orders" />
     </AssociationSet>
+    <EntitySet Name="valutes" EntityType="BOOKSHOPModel.valute" />
+    <AssociationSet Name="FK_books_valute" Association="BOOKSHOPModel.FK_books_valute">
+      <End Role="valute" EntitySet="valutes" />
+      <End Role="book" EntitySet="books" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="valute">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="books" Relationship="BOOKSHOPModel.FK_books_valute" FromRole="valute" ToRole="book" />
+  </EntityType>
+  <Association Name="FK_books_valute">
+    <End Type="BOOKSHOPModel.valute" Role="valute" Multiplicity="0..1" />
+    <End Type="BOOKSHOPModel.book" Role="book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="valute">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="book">
+        <PropertyRef Name="id_valute" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

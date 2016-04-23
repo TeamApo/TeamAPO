@@ -28,10 +28,13 @@ namespace BookShop
         public Nullable<int> count { get; set; }
         public Nullable<decimal> price { get; set; }
         public Nullable<bool> outside_view { get; set; }
+        public string image_url { get; set; }
+        public Nullable<int> id_valute { get; set; }
     
         public virtual author author { get; set; }
         public virtual category category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<order_details> order_details { get; set; }
+        public virtual valute valute { get; set; }
     }
 }
